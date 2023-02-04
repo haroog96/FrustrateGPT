@@ -3,7 +3,7 @@
 <head>
     <title>FrustrateGPT</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width"/>
 </head>
 <body>
 <link rel="stylesheet" href="style.css" type="text/css">
@@ -25,11 +25,19 @@
 <div id = "search-response"></div>
 <script>
     var count = 0;
-    $("#searchButton").click(function() {    
-        count += 1;
-        $(".name-logo").fadeOut(300,function(){$(this).remove()});
-        $(".info").fadeOut(300,function(){$(this).remove()});
-        $(".wrap").animate({top:'20%'});
+    function sleep(ms){
+        return new Promise(resolve=>setTimeout(resolve,ms));
+    }
+    function getData(){
+        $(".info").animate({top:'20%',left:"17%"});
+        $("#logo").animate({width:"90px",height:'90px'});
+        $(".wrap").animate({top:'30%'});
+        $("#search-response").animate({opacity:"1",top:"49%"});
+        $(".name-logo").animate({top:"16%",left:"60%"});
+        $("#slogan").fadeOut(300,function(){$(this).remove()});
+        $("#name").animate({"font-size":"35px"});
+        $("#search-response").html("Loading....");
+        sleep(4000).then(()=>{
         console.log("The button was clicked");
         $.ajax({
             type: "GET",
@@ -39,8 +47,18 @@
             },
             success: function(response) {
             $("#search-response").html(response)
-        }
+            }
+        });});
+    };
+    $("#searchButton").click(function() {
+        count += 1;
+        getData();
     });
+    document.getElementById("search-term").addEventListener("keypress",function(event){
+        if(event.key == "Enter"){
+            count+=1;
+            getData();
+        };
     });
 </script>    
 </body>

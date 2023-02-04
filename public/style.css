@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
 
+@media screen and (max-width:480px) {
+.wrap{
+  width:95%;
+}
+}
+
 body{
   background: rgb(46, 46, 46);
 }
@@ -60,7 +66,7 @@ body{
   top: 37%;
   left: 50%;  
   transform: translate(-50%, -50%);
-  background-color:rgb(46, 46, 46);
+  background-color:rgb(0,0,0,0);
 }
 
 #name{
@@ -88,10 +94,27 @@ body{
   top: 20%;
   left: 50%;  
   transform: translate(-50%, -50%);
-  background-color: rgb(46, 46, 46);
+  background-color: rgb(0,0,0,0);
   justify-content: center;
   align-items: center;
 }
+
+#search-response{
+  width: 95%;
+  height: 25%;
+  position:absolute;
+  display:flex;
+  border-radius: 15px;
+  opacity:0;
+  top: 75%;
+  left: 50%;  
+  transform: translate(-50%, -50%);
+  background-color:#969696;
+  justify-content: center;
+  align-items: center;
+  color:#ffffff;
+}
+
 
 #logo{
   width:160px;
