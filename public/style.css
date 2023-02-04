@@ -1,42 +1,102 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
 
 body{
-  background: #c7c7c7;
-  font-family: 'Open Sans', sans-serif;
+  background: rgb(46, 46, 46);
 }
 
 .search {
-  width: 100%;
+  width: 95%;
+  height:80%;
   display: flex;
+  flex-direction: row;
+  background-color: #969696;
 }
 
 .searchTerm {
-  width: 60%;
-  border: 3px solid #252525;
-  border-right: none;
-  padding: 5px;
-  height: 45px;
-  border-radius: 5px 0 0 5px;
+  flex-grow:2;
+  padding: 5px 5px 5px 5px;
   outline: none;
   color: #ffffff;
   background-color: #969696;
+  font-size:16px;
+  border:none;
 }
 
 .searchTerm:focus{
   color: #ffffff;
 }
 
+#searchButton{
+  background-color:#969696;
+  border:none;
+  opacity:0.4;
+}
+
+#search-logo{
+  width:30px;
+  height:30px;
+}
+
 .wrap{
     width: 95%;
-    height: 80px;
+    height: 10%;
     position: absolute;
-    border: 3px solid rgb(46, 46, 46);
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 18px;
+    /*    border: 3px solid rgb(46, 46, 46);
+    border-radius: 5px 5px 5px 5px;*/
     display:flex;
-    top: 50%;
+    top: 55%;
     left: 50%;  
     transform: translate(-50%, -50%);
-    background-color: rgb(46, 46, 46);
+    background-color: #969696;
     justify-content: center;
     align-items: center;
-}    
+}
+
+.name-logo{
+  width: 95%;
+  height: 3%;
+  position: absolute;
+  top: 37%;
+  left: 50%;  
+  transform: translate(-50%, -50%);
+  background-color:rgb(46, 46, 46);
+}
+
+#name{
+  font-family: 'DM Serif Display', serif; 
+  font-size: 50px;
+  color:#ffffff;
+  text-align: center;
+  margin-top:-20px;
+  margin-bottom:1px;
+}
+
+#slogan{
+  font-family: 'DM Serif Display', serif; 
+  font-size: 15px;
+  color:#ffffff;
+  text-align:center;
+  margin-top:-8px;
+}
+
+.info{
+  width: 95%;
+  height: 25%;
+  position:absolute;
+  display:flex;
+  top: 20%;
+  left: 50%;  
+  transform: translate(-50%, -50%);
+  background-color: rgb(46, 46, 46);
+  justify-content: center;
+  align-items: center;
+}
+
+#logo{
+  width:160px;
+  height:160px;
+  position:absolute;
+  top:5%; 
+  border-radius: 12px;
+}

@@ -3,14 +3,23 @@
 <head>
     <title>FrustrateGPT</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
 <link rel="stylesheet" href="style.css" type="text/css">
+<div class = "info">
+    <img src="Logo.png" alt="Please get rid of this misery" id = "logo">
+</div>
+<div class = "name-logo">
+    <p id="name">FrustrateGPT</p>
+    <p id="slogan">If AI was a busy employee</p>
+</div>
 <div class="wrap">
     <div class="search">
     <input type="text" id ="search-term" class="searchTerm" placeholder="What are you looking for?">
-    <button type="submit" id ="searchButton" class="searchButton">Search</button>
+    <button type="submit" id ="searchButton" class="searchButton">
+        <img src="search-icon.png" alt="Click me or get lost" id = "search-logo">
+    </button>
     </div>
 </div>
 <div id = "search-response"></div>
@@ -18,6 +27,9 @@
     var count = 0;
     $("#searchButton").click(function() {    
         count += 1;
+        $(".name-logo").fadeOut(300,function(){$(this).remove()});
+        $(".info").fadeOut(300,function(){$(this).remove()});
+        $(".wrap").animate({top:'20%'});
         console.log("The button was clicked");
         $.ajax({
             type: "GET",
